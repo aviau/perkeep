@@ -102,9 +102,9 @@ func parseProvidesRequires(fi os.FileInfo, path string, f io.Reader) (provides, 
 	mt := fi.ModTime()
 	depCacheMu.Lock()
 	defer depCacheMu.Unlock()
-	if ci := depCache[path]; ci.modTime.Equal(mt) {
-		return ci.provides, ci.requires, nil
-	}
+	//if ci := depCache[path]; ci.modTime.Equal(mt) {
+	//return ci.provides, ci.requires, nil
+	//}
 
 	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
